@@ -36,10 +36,63 @@
             </div>
         </div>
         <div class="content">
-            <div class="post">POST</div>
+            <div class="post">
+                <div class="post-container">
+                    <div class="post-content-header">
+                        <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
+                        <p>Andika Prasetya</p>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="post-content-img">
+                    </div>
+                    <div class="post-content-caption">
+                        <p class="nama">Andika Prasetya</p>
+                        <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et vitae sapiente minima beatae commodi soluta doloribus animi molestias quibusdam reprehenderit, accusantium tempore consequuntur debitis aspernatur unde nulla vero iusto.</p>
+                    </div>
+                </div>
+                <div class="post-container">
+                    <div class="post-content-header">
+                        <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
+                        <p>Andika Prasetya</p>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="post-content-img">
+                    </div>
+                    <div class="post-content-caption">
+                        <p class="nama">Andika Prasetya</p>
+                        <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et vitae sapiente minima beatae commodi soluta doloribus animi molestias quibusdam reprehenderit, accusantium tempore consequuntur debitis aspernatur unde nulla vero iusto.</p>
+                    </div>
+                </div>
+                <div class="post-container">
+                    <div class="post-content-header">
+                        <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
+                        <p>Andika Prasetya</p>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="post-content-img">
+                    </div>
+                    <div class="post-content-caption">
+                        <p class="nama">Andika Prasetya</p>
+                        <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et vitae sapiente minima beatae commodi soluta doloribus animi molestias quibusdam reprehenderit, accusantium tempore consequuntur debitis aspernatur unde nulla vero iusto.</p>
+                    </div>
+                </div>
+                <div class="post-container">
+                    <div class="post-content-header">
+                        <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
+                        <p>Andika Prasetya</p>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="post-content-img">
+                    </div>
+                    <div class="post-content-caption">
+                        <p class="nama">Andika Prasetya</p>
+                        <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et vitae sapiente minima beatae commodi soluta doloribus animi molestias quibusdam reprehenderit, accusantium tempore consequuntur debitis aspernatur unde nulla vero iusto.</p>
+                    </div>
+                </div>
+            </div>
             <div class="event">EVENT</div>
         </div>
-        <img class="nav-img" src="<?= base_url('/assets/img/nav.jpg') ?>">
+        <div class="nav-img"></div>
         <div class="nav-gradient"></div>
         <div class="mobile-menu">
             <a class="fas fa-lg fa-home"></a>
@@ -48,20 +101,7 @@
             <a><img src="<?= base_url('/assets/img/default.jpg') ?>"></a>
         </div>
     </div>
-    <script>
-        document.querySelector('.post-nav').addEventListener('click', () => {
-            document.querySelector('.post-nav').classList.add('active');
-            document.querySelector('.event-nav').classList.remove('active');
-            document.querySelector('.content .event').classList.remove('show');
-            document.querySelector('.content .post').classList.remove('hide');
-        });
-        document.querySelector('.event-nav').addEventListener('click', () => {
-            document.querySelector('.event-nav').classList.add('active');
-            document.querySelector('.post-nav').classList.remove('active');
-            document.querySelector('.content .post').classList.add('hide');
-            document.querySelector('.content .event').classList.add('show');
-        })
-    </script>
+    <script src="<?= base_url('/assets/js/script.js') ?>"></script>
 </body>
 
 </html>
