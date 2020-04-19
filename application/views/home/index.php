@@ -27,9 +27,17 @@
                 <a><img src="<?= base_url('/assets/img/default.jpg') ?>"></a>
             </div>
         </nav>
+        <div class="mobile-nav-content">
+            <div class="post-nav active">
+                <p>POST</p>
+            </div>
+            <div class="event-nav">
+                <P>EVENT</P>
+            </div>
+        </div>
         <div class="content">
-            <div class="post">POST..</div>
-            <div class="event">EVENT...</div>
+            <div class="post">POST</div>
+            <div class="event">EVENT</div>
         </div>
         <img class="nav-img" src="<?= base_url('/assets/img/nav.jpg') ?>">
         <div class="nav-gradient"></div>
@@ -41,9 +49,18 @@
         </div>
     </div>
     <script>
-        document.querySelector('.logo').addEventListener('click', () => {
-            document.querySelector('.event').classList.toggle('show');
+        document.querySelector('.post-nav').addEventListener('click', () => {
+            document.querySelector('.post-nav').classList.add('active');
+            document.querySelector('.event-nav').classList.remove('active');
+            document.querySelector('.content .event').classList.remove('show');
+            document.querySelector('.content .post').classList.remove('hide');
         });
+        document.querySelector('.event-nav').addEventListener('click', () => {
+            document.querySelector('.event-nav').classList.add('active');
+            document.querySelector('.post-nav').classList.remove('active');
+            document.querySelector('.content .post').classList.add('hide');
+            document.querySelector('.content .event').classList.add('show');
+        })
     </script>
 </body>
 
