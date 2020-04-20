@@ -49,18 +49,15 @@
                         <p class="nama">Andika Prasetya</p>
                         <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et vitae sapiente minima beatae commodi soluta doloribus animi molestias quibusdam reprehenderit, accusantium tempore consequuntur debitis aspernatur unde nulla vero iusto.</p>
                     </div>
-                </div>
-                <div class="post-container">
-                    <div class="post-content-header">
-                        <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
-                        <p>Andika Prasetya</p>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                    <div class="post-content-img">
-                    </div>
-                    <div class="post-content-caption">
-                        <p class="nama">Andika Prasetya</p>
-                        <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et vitae sapiente minima beatae commodi soluta doloribus animi molestias quibusdam reprehenderit, accusantium tempore consequuntur debitis aspernatur unde nulla vero iusto.</p>
+                    <div class="post-content-info">
+                        <div class="alamat">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <P>Jl.gatotkaca no.19</P>
+                        </div>
+                        <div class="jam-buka">
+                            <i class="fas fa-clock"></i>
+                            <p>BUKA 24 JAM</p>
+                        </div>
                     </div>
                 </div>
                 <div class="post-container">
@@ -75,6 +72,16 @@
                         <p class="nama">Andika Prasetya</p>
                         <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et vitae sapiente minima beatae commodi soluta doloribus animi molestias quibusdam reprehenderit, accusantium tempore consequuntur debitis aspernatur unde nulla vero iusto.</p>
                     </div>
+                    <div class="post-content-info">
+                        <div class="alamat">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <P>Jl.gatotkaca no.19</P>
+                        </div>
+                        <div class="jam-buka">
+                            <i class="fas fa-clock"></i>
+                            <p>BUKA 24 JAM</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="post-container">
                     <div class="post-content-header">
@@ -87,6 +94,16 @@
                     <div class="post-content-caption">
                         <p class="nama">Andika Prasetya</p>
                         <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et vitae sapiente minima beatae commodi soluta doloribus animi molestias quibusdam reprehenderit, accusantium tempore consequuntur debitis aspernatur unde nulla vero iusto.</p>
+                    </div>
+                    <div class="post-content-info">
+                        <div class="alamat">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <P>Jl.gatotkaca no.19</P>
+                        </div>
+                        <div class="jam-buka">
+                            <i class="far fa-clock"></i>
+                            <p>BUKA 24 JAM</p>
+                        </div>
                     </div>
                 </div>
             </div>
