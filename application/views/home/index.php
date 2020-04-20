@@ -55,7 +55,7 @@
                             <P>Jl.gatotkaca no.19</P>
                         </div>
                         <div class="jam-buka">
-                            <i class="fas fa-clock"></i>
+                            <i class="far fa-clock"></i>
                             <p>BUKA 24 JAM</p>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                             <P>Jl.gatotkaca no.19</P>
                         </div>
                         <div class="jam-buka">
-                            <i class="fas fa-clock"></i>
+                            <i class="far fa-clock"></i>
                             <p>BUKA 24 JAM</p>
                         </div>
                     </div>
