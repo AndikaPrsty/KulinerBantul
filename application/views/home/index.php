@@ -27,6 +27,13 @@
                 <a><img src="<?= base_url('/assets/img/default.jpg') ?>"></a>
             </div>
         </nav>
+        <div class="nav-gradient"></div>
+        <div class="mobile-menu">
+            <a class="fas fa-lg fa-home"></a>
+            <a class="fas fa-lg fa-bell"></a>
+            <a class="fas fa-lg fa-compass"></a>
+            <a><img src="<?= base_url('/assets/img/default.jpg') ?>"></a>
+        </div>
         <div class="mobile-nav-content">
             <div class="post-nav active">
                 <p>POST</p>
@@ -67,6 +74,10 @@
                         <div class="jam-buka">
                             <i class="far fa-clock"></i>
                             <p>BUKA 24 JAM</p>
+                        </div>
+                        <div class="mobile-map">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>lihat lokasi</p>
                         </div>
                     </div>
                 </div>
@@ -172,14 +183,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="nav-img"></div>
-        <div class="nav-gradient"></div>
-        <div class="mobile-menu">
-            <a class="fas fa-lg fa-home"></a>
-            <a class="fas fa-lg fa-bell"></a>
-            <a class="fas fa-lg fa-compass"></a>
-            <a><img src="<?= base_url('/assets/img/default.jpg') ?>"></a>
         </div>
     </div>
     <script src="<?= base_url('/assets/js/script.js') ?>"></script>
