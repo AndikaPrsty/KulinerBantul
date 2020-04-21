@@ -58,6 +58,11 @@
                         <div class="alamat">
                             <i class="fas fa-map-marker-alt"></i>
                             <P>Jl.gatotkaca no.19</P>
+                            <div class="map">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <p>lihat map</p>
+
+                            </div>
                         </div>
                         <div class="jam-buka">
                             <i class="far fa-clock"></i>
@@ -110,7 +115,63 @@
                     </div>
                 </div>
             </div>
-            <div class="event">EVENT</div>
+            <div class="event">
+                <h3>Event Yang Akan Datang</h3>
+                <div class="event-container">
+                    <div class="event-content-header">
+                        <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
+                        <p>Andika Prasetya</p>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="event-content-img">
+                        <img src="<?= base_url('/assets/img/event-img-example.jpg') ?>" alt="">
+                    </div>
+                    <div class="event-content-caption">
+                        <p class="nama">Andika Prasetya</p>
+                        <p class="caption">Ayo Ramaikan...
+                            lokasi cari sendiri
+                        </p>
+                    </div>
+                    <div class="event-content-info">
+                        <div class="alamat">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Ambarketawang</p>
+                        </div>
+                        <hr>
+                        <div class="tanggal">
+                            <i class="far fa-calendar-alt"></i>
+                            <p>40 Januari 2020</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container">
+                    <div class="event-content-header">
+                        <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
+                        <p>Andika Prasetya</p>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="event-content-img">
+                        <img src="<?= base_url('/assets/img/event-img-example.jpg') ?>" alt="">
+                    </div>
+                    <div class="event-content-caption">
+                        <p class="nama">Andika Prasetya</p>
+                        <p class="caption">Ayo Ramaikan...
+                            lokasi cari sendiri
+                        </p>
+                    </div>
+                    <div class="event-content-info">
+                        <div class="alamat">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Ambarketawang</p>
+                        </div>
+                        <hr>
+                        <div class="tanggal">
+                            <i class="far fa-calendar-alt"></i>
+                            <p>40 Januari 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="nav-img"></div>
         <div class="nav-gradient"></div>
