@@ -7,8 +7,9 @@
 </div>
 <!-- end footer -->
 </div>
-<script src="<?= base_url('/assets/js/openlayer.js') ?>"></script>
+<!-- <script src="<?= base_url('/assets/js/openlayer.js') ?>"></script> -->
 <script src="<?= base_url('/assets/js/script.js') ?>"></script>
+<script src="<?= base_url('/assets/js/leaflet.js') ?>"></script>
 </body>
 
 </html>

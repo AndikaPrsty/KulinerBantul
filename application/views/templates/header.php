@@ -8,8 +8,10 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('/assets/css/fontawesome-free/css/all.css') ?>">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= base_url('/assets/css/openlayers/ol.css') ?>">
-    <script src="<?= base_url('/assets/css/openlayers/ol.js') ?>"></script>
+    <!-- <link rel="stylesheet" href="<?= base_url('/assets/css/openlayers/ol.css') ?>"> -->
+    <!-- <script src="<?= base_url('/assets/css/openlayers/ol.js') ?>"></script> -->
+    <link rel="stylesheet" href="<?= base_url('/assets/leaflet/leaflet.css') ?>">
+    <script src="<?= base_url('/assets/leaflet/leaflet.js') ?>"></script>
 
 </head>
 

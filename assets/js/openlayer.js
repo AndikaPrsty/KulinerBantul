@@ -28,11 +28,12 @@ map.getInteractions().forEach(function (interaction) {
 	}
 });
 
-marker_el.addEventListener("mousedown", function (e) {
+marker_el.addEventListener("click", function (e) {
 	dragPan.setActive(false);
 	marker.set("dragging", true);
 });
 map.on("pointermove", function (e) {
+	console.log(e.coordinate);
 	if (marker.get("dragging") == true) {
 		marker.setPosition(e.coordinate);
 	}
@@ -46,8 +47,8 @@ map.on("pointerup", function (e) {
 		let lat = coords[0];
 		let lon = coords[1];
 
-		document.querySelector(".latitude").value = lat;
-		document.querySelector(".longitude").value = lon;
+		document.querySelector(".latitude").innerHTML = lat;
+		document.querySelector(".longitude").innerHTML = lon;
 
 		dragPan.setActive(true);
 		marker.set("dragging", false);

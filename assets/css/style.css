@@ -376,11 +376,17 @@ nav .nav-menu img {
 }
 
 .content-tambah-kuliner {
-	margin-top: 70px;
+	margin-top: 10px;
 	padding: 0 15%;
 	display: grid;
 	gap: 0 20px;
 	grid-template-columns: repeat(2, 1fr);
+}
+.form-kuliner-container {
+	margin-top: 70px;
+}
+.form-kuliner-container h3 {
+	text-align: center;
 }
 /* akhir post kuliner */
 
@@ -440,7 +446,7 @@ nav .nav-menu img {
 /* akhir post event */
 
 /* openlayers */
-.form-ol {
+.form-lf {
 	display: flex;
 }
 .portlet-body .map {
