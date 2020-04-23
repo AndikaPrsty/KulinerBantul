@@ -1,4 +1,6 @@
-document.querySelector(".post-nav").addEventListener("click", () => {
+let postNav = document.querySelector(".post-nav");
+
+postNav.addEventListener("click", () => {
 	document.querySelector(".post-nav").classList.add("active");
 	document.querySelector(".event-nav").classList.remove("active");
 	document.querySelector(".content .event").classList.remove("show");
@@ -24,3 +26,9 @@ document
 		console.log("clicked");
 		alert(base_url);
 	});
+window.addEventListener("click", function (event) {
+	if (event.target == document.querySelector(".modal")) {
+		document.querySelector(".modal").classList.remove("show");
+	}
+});
+console.log(window);
