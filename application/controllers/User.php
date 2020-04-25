@@ -23,6 +23,7 @@ class User extends CI_Controller
                     'nama' => $user['nama_user'],
                     'email' => $user['email'],
                     'image' => $user['image'],
+                    'id_user' => $user['id_user'],
                     'id_role' => $user['id_role'],
                     'ip_address' => $user['ip_address']
                 ];

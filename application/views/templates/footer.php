@@ -7,7 +7,11 @@
 </div>
 <!-- end footer -->
 </div>
-<!-- <script src="<?= base_url('/assets/js/openlayer.js') ?>"></script> -->
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+<script>
+
+</script>
 <script src="<?= base_url('/assets/js/script.js') ?>"></script>
 <script src="<?= base_url('/assets/js/leaflet.js') ?>"></script>
 </body>

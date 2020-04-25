@@ -6,4 +6,16 @@ class PostModel extends CI_Model
     {
         return $this->db->get('jenis_post');
     }
+    public function set_post_img($data)
+    {
+        $this->db->insert('gambar', $data);
+    }
+    public function set_post_map($data)
+    {
+        $this->db->insert('maps', $data);
+    }
+    public function set_post($data)
+    {
+        $this->db->insert('post', $data);
+    }
 }

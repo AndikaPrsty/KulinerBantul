@@ -9,14 +9,20 @@
 <div class="content">
     <div class="post">
         <div class="filter">
-            <div class="filter">filter</div>
-            <div class="sort">sort</div>
+            <div class="filter">
+                <p>warung-burjo</p>
+                <p>angkringan</p>
+                <p>restoran</p>
+                <p>warteg</p>
+                <p>padang</p>
+                <p>sate</p>
+            </div>
         </div>
-        <div onclick="window.location.href = '<?= base_url('/post/tambah_tempat_kuliner') ?>'" class="add-tempat-kuliner"><i class="fas fa-plus"></i>
+        <!-- <div onclick="window.location.href = '<?= base_url('/post/tambah_tempat_kuliner') ?>'" class="add-tempat-kuliner"><i class="fas fa-plus"></i>
             <p>
                 tambah tempat kuliner
             </p>
-        </div>
+        </div> -->
         <div class="post-container">
             <div class="post-content-header">
                 <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
@@ -101,11 +107,11 @@
     </div>
     <div class="event">
         <h3 class="event-header">Event Yang Akan Datang</h3>
-        <div class="add-event"><i class="fas fa-plus"></i>
+        <!-- <div class="add-event"><i class="fas fa-plus"></i>
             <p>
                 tambah event
             </p>
-        </div>
+        </div> -->
         <div class="event-container">
             <div class="event-content-header">
                 <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">

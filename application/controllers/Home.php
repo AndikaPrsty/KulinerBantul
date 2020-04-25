@@ -3,6 +3,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Home extends CI_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->session->unset_userdata('id_post');
+	}
+
 	public function index()
 	{
 		$this->load->view('templates/header');
@@ -61,6 +67,7 @@ class Home extends CI_Controller
 			redirect('home/debugging');
 		}
 	}
+
 	public function set_img()
 	{
 		$img = file_get_contents('php://input');
@@ -72,6 +79,6 @@ class Home extends CI_Controller
 	public function debugging()
 	{
 		// $img = $this->set_img()->img;
-		var_dump(time());
+		var_dump($this->session->userdata());
 	}
 }

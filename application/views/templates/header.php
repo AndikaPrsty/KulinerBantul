@@ -26,6 +26,13 @@
                 <input type="text" placeholder="    search...">
             </div>
             <div class="nav-menu">
+                <div class="dropdown">
+                    <button><i class="fas fa-folder-plus"></i> Posting</button>
+                    <div class="dropdown-menu">
+                        <a href="<?= base_url('/post/tambah_tempat_kuliner') ?>">Tempat kuliner</a>
+                        <a href="">Event kuliner</a>
+                    </div>
+                </div>
                 <a onclick="window.location.href = '<?= base_url(); ?>'" class="fas fa-lg fa-home"></a>
                 <a class="fas fa-lg fa-bell"></a>
                 <a class="fas fa-lg fa-compass"></a>
