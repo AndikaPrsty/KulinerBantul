@@ -68,7 +68,7 @@ class Home extends CI_Controller
 			];
 			$this->UserModel->daftar($data);
 			$this->session->unset_userdata('image');
-			redirect('home/debugging');
+			redirect('home');
 		}
 	}
 

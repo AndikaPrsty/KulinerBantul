@@ -39,11 +39,12 @@
                     <a class="fas fa-lg fa-bell"></a>
                     <a class="fas fa-lg fa-compass"></a>
                     <a><img src="<?= $this->session->userdata('image') ?>"></a>
+                    <a href="<?= base_url('user/logout') ?>" class="btn btn-secondary">logout</a>
                 </div>
             <?php else : ?>
                 <div>
                     <a href="<?= base_url('user') ?>" class="btn btn-secondary">login</a>
-                    <a class="btn btn-secondary">daftar</a>
+                    <a href="<?= base_url('home/daftar') ?>" class="btn btn-secondary">daftar</a>
                 </div>
             <?php endif ?>
         </nav>
