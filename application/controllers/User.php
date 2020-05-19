@@ -2,8 +2,17 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class User extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        // if($this->session->userdata())
+
+    }
     public function index()
     {
+        if ($this->session->userdata('email')) {
+            redirect();
+        }
         $valid =  $this->form_validation;
         $valid->set_rules('email', 'Alamat email', 'required|trim', ['required' => 'Alamat email harus diisi']);
         $valid->set_rules('password', 'Password', 'required|trim', ['required' => 'Password harus diisi']);

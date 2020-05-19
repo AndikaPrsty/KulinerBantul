@@ -18,152 +18,119 @@
                 <p>sate</p>
             </div>
         </div>
-        <!-- <div onclick="window.location.href = '<?= base_url('/post/tambah_tempat_kuliner') ?>'" class="add-tempat-kuliner"><i class="fas fa-plus"></i>
-            <p>
-                tambah tempat kuliner
-            </p>
-        </div> -->
-        <div class="post-container">
-            <div class="post-content-header">
-                <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
-                <p>Andika Prasetya</p>
-                <i class="fas fa-ellipsis-v"></i>
-            </div>
-            <div class="post-content-img"><img src="<?= base_url('/assets/img/post-img-example.jpg') ?>" alt=""></div>
-            <div class="post-content-caption">
-                <p class="nama">Andika Prasetya</p>
-                <p class="caption">E-NEWS [Entrepreneur News]
-                    Aktivitas kewirausahaan kini menjadi pilihan yang paling diminati kaum muda, khususnya mahasiswa. Seperti yang dilakukan oleh Nurul Khasanah alumni Prodi Sistem Informasi UBSI PSDKU Yogyakarta membuat usaha Kedai Geguyon. Berawal dari 3 orang dengan ide yang sama untuk membangun kedai untuk nongkrong anak muda.
-
-                    Dengan omset 8 - 12 juta setiap bulan, Nurul masih terus belajar dan berinovasi untuk mengembangkan bisnisnya. Diakhir wawancara Nurul memberikan tips untuk wiramuda UBSI “Cukup jalankan saja dan tidak perlu banyak pertimbangan karena seiring berjalannya usaha akan banyak ditemui hal-hal baru yang akan menuntut kita belajar lebih dalam lagi. Siapa yang sungguh-sungguh, dia yang akan berhasil dalam usahanya".
-                    . .
-                    Cek berita selengkapnya:
-                    http://bec.bsi.ac.id/baca-artikel/2020/04/kedai-geguyon-tetap-eksis-dimasa-krisis .</p>
-            </div>
-            <div class="post-content-info">
-                <div class="alamat">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <P>Jl.gatotkaca no.19</P>
-                    <div class="map">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <p>lihat map</p>
-
+        <?php foreach ($tempat_kuliner as $tempat) : ?>
+            <div class="post-container">
+                <div class="post-content-header">
+                    <img src="<?= $tempat['image'] ?>" alt="">
+                    <p><?= $tempat['judul_post'] ?></p>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+                <div class="post-content-img">
+                    <div id="carouselExampleControls<?= $tempat['id_post'] ?>" data-interval="false" class="carousel slide">
+                        <div class="carousel-inner">
+                            <?php foreach ($this->PostModel->get_gambar_post($tempat['id_post'])->result_array() as $gambar) : ?>
+                                <div class="carousel-item">
+                                    <img style="max-width: 700px;max-height:300px" src="<?= $gambar['gambar'] ?>">
+                                </div>
+                            <?php endforeach  ?>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls<?= $tempat['id_post'] ?>" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls<?= $tempat['id_post'] ?>" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
-                <div class="jam-buka">
-                    <i class="far fa-clock"></i>
-                    <p>BUKA 24 JAM</p>
+                <div class="post-content-caption">
+                    <p class="nama"><?= $tempat['nama_user'] ?></p>
+                    <p style="font-size:13px" class="caption"><?= $tempat['konten'] ?></p>
                 </div>
-                <div class="mobile-map">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <p>lihat lokasi</p>
-                </div>
-            </div>
-        </div>
-        <div class="post-container">
-            <div class="post-content-header">
-                <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
-                <p>Andika Prasetya</p>
-                <i class="fas fa-ellipsis-v"></i>
-            </div>
-            <div class="post-content-img"><img class="img" src="<?= base_url('/assets/img/post-img-example.jpg') ?>" alt=""></div>
-            <div class="post-content-caption">
-                <p class="nama">Andika Prasetya</p>
-                <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et vitae sapiente minima beatae commodi soluta doloribus animi molestias quibusdam reprehenderit, accusantium tempore consequuntur debitis aspernatur unde nulla vero iusto.</p>
-            </div>
-            <div class="post-content-info">
-                <div class="alamat">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <P>Jl.gatotkaca no.19</P>
-                </div>
-                <div class="jam-buka">
-                    <i class="far fa-clock"></i>
-                    <p>BUKA 24 JAM</p>
+                <div class="post-content-info">
+                    <div class="alamat">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <P style="font-size: 13px"><?= $tempat['alamat'] ?></P>
+                        <div class="map">
+                            <button style="margin-right:5px" data-judul="<?= $tempat['judul_post'] ?>" data-longitude="<?= $tempat['longitude'] ?>" data-latitude="<?= $tempat['latitude'] ?>" data-toggle="modal" data-target="#mapmodal" id="btnmap" class="btn btn-sm btn-primary "><i class="fas fa-globe btnmap"></i></button>
+                        </div>
+                    </div>
+                    <div class="jam-buka">
+                        <i class="far fa-clock"></i>
+                        <p style="font-weight: bold"><?= $tempat['jam_buka'] ?></p>
+                    </div>
+                    <div class="mobile-map">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>lihat lokasi</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="post-container">
-            <div class="post-content-header">
-                <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
-                <p>Andika Prasetya</p>
-                <i class="fas fa-ellipsis-v"></i>
-            </div>
-            <div class="post-content-img"><img src="<?= base_url('/assets/img/post-img-example.jpg') ?>" alt=""></div>
-            <div class="post-content-caption">
-                <p class="nama">Andika Prasetya</p>
-                <p class="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium et vitae sapiente minima beatae commodi soluta doloribus animi molestias quibusdam reprehenderit, accusantium tempore consequuntur debitis aspernatur unde nulla vero iusto.</p>
-            </div>
-            <div class="post-content-info">
-                <div class="alamat">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <P>Jl.gatotkaca no.19</P>
-                </div>
-                <div class="jam-buka">
-                    <i class="far fa-clock"></i>
-                    <p>BUKA 24 JAM</p>
-                </div>
-            </div>
-        </div>
+        <?php endforeach ?>
     </div>
     <div class="event">
         <h3 class="event-header">Event Yang Akan Datang</h3>
-        <!-- <div class="add-event"><i class="fas fa-plus"></i>
-            <p>
-                tambah event
-            </p>
-        </div> -->
-        <div class="event-container">
-            <div class="event-content-header">
-                <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
-                <p>Andika Prasetya</p>
-                <i class="fas fa-ellipsis-v"></i>
-            </div>
-            <div class="event-content-img">
-                <img src="<?= base_url('/assets/img/event-img-example.jpg') ?>" alt="">
-            </div>
-            <div class="event-content-caption">
-                <p class="nama">Andika Prasetya</p>
-                <p class="caption">Ayo Ramaikan...
-                    lokasi cari sendiri
-                </p>
-            </div>
-            <div class="event-content-info">
-                <div class="alamat">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Ambarketawang</p>
+        <?php foreach ($event_kuliner as $event) : ?>
+            <div class="event-container">
+                <div class="event-content-header">
+                    <img src="<?= $event['image'] ?>" alt="">
+                    <p><?= $event['judul_post'] ?></p>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
-                <hr>
-                <div class="tanggal">
-                    <i class="far fa-calendar-alt"></i>
-                    <p>40 Januari 2020</p>
+                <div class="event-content-img">
+                    <div id="carouselExampleControls<?= $event['id_post'] ?>" data-interval="false" class="carousel slide">
+                        <div class="carousel-inner">
+                            <?php foreach ($this->PostModel->get_gambar_post($event['id_post'])->result_array() as $gambar) : ?>
+                                <div class="carousel-item">
+                                    <img style="max-width: 700px;max-height:300px" src="<?= $gambar['gambar'] ?>">
+                                </div>
+                            <?php endforeach  ?>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls<?= $event['id_post'] ?>" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls<?= $event['id_post'] ?>" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="event-content-caption">
+                    <p class="nama"><?= $event['nama_user'] ?></p>
+                    <p class="caption"><?= $event['konten'] ?>
+                    </p>
+                </div>
+                <div class="event-content-info">
+                    <div class="alamat">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><?= $event['alamat'] ?></p>
+                    </div>
+                    <hr>
+                    <div class="tanggal">
+                        <i class="far fa-calendar-alt"></i>
+                        <p><?= $event['tanggal'] ?></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="event-container">
-            <div class="event-content-header">
-                <img src="<?= base_url('/assets/img/default.jpg') ?>" alt="">
-                <p>Andika Prasetya</p>
-                <i class="fas fa-ellipsis-v"></i>
+        <?php endforeach ?>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="mapmodal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="event-content-img">
-                <img src="<?= base_url('/assets/img/event-img-example.jpg') ?>" alt="">
-            </div>
-            <div class="event-content-caption">
-                <p class="nama">Andika Prasetya</p>
-                <p class="caption">Ayo Ramaikan...
-                    lokasi cari sendiri
-                </p>
-            </div>
-            <div class="event-content-info">
-                <div class="alamat">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Ambarketawang</p>
+            <div class="modal-body">
+                <div id="maphome" class="map">
                 </div>
-                <hr>
-                <div class="tanggal">
-                    <i class="far fa-calendar-alt"></i>
-                    <p>40 Januari 2020</p>
-                </div>
+
             </div>
         </div>
     </div>

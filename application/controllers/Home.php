@@ -11,8 +11,12 @@ class Home extends CI_Controller
 
 	public function index()
 	{
+		$data = [
+			'tempat_kuliner' => $this->PostModel->get_post_tempat_kuliner()->result_array(),
+			'event_kuliner' => $this->PostModel->get_post_event_kuliner()->result_array()
+		];
 		$this->load->view('templates/header');
-		$this->load->view('home/index');
+		$this->load->view('home/index', $data);
 		$this->load->view('templates/footer');
 	}
 	public function daftar()

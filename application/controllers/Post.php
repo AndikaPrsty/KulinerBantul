@@ -21,6 +21,11 @@ class Post extends CI_Controller
     }
     public function tambah_event()
     {
+        $id_post = 'pst' . time();
+        $this->session->set_userdata(['id_post' => $id_post]);
+        $this->load->view('templates/header');
+        $this->load->view('user/tambahevent');
+        $this->load->view('templates/footer');
     }
     public function set_post_img()
     {
@@ -44,10 +49,12 @@ class Post extends CI_Controller
         $data_post = [
             'id_post' => $this->session->userdata('id_post'),
             'id_user' => $this->session->userdata('id_user'),
-            'id_jenis_post' => 'klr1587608474',
+            'id_jenis_post' => $jsonpost['id_jenis_post'],
             'judul_post' => $jsonpost['judul_post'],
+            'jam_buka' => $jsonpost['jam_buka'],
             'alamat' => $jsonpost['alamat'],
-            'konten' => $jsonpost['konten']
+            'konten' => $jsonpost['konten'],
+            'tanggal' => $jsonpost['tanggal_event']
         ];
         $data_map = [
             'id_map' => 'map' . time(),

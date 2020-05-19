@@ -35,16 +35,50 @@ if (eventNav != null) {
 	});
 
 	const base_url = `${window.location.origin}/KulinerBantul/`;
-	document
-		.querySelector(".content .post .post-container .post-content-img")
-		.addEventListener("click", () => {
-			console.log("clicked");
-			alert(base_url);
+}
+
+let carousel = document.querySelectorAll(".carousel-inner");
+
+for (let i = 0; i < carousel.length; i++) {
+	carousel[i].children[0].classList.add("active");
+	// console.log(carousel[i].children[i]);
+}
+// console.log(window);
+
+let btnmap = document.querySelectorAll("#btnmap");
+let latitude;
+let longitude;
+let modalTitle = document.querySelector(".modal-title");
+let themarker = {};
+
+for (let i = 0; i < btnmap.length; i++) {
+	btnmap[i].addEventListener("click", function (e) {
+		document.querySelector("#maphome").innerHTML =
+			'<div id="map" style="height:500px;width:760px"></div>';
+		longitude = null;
+		latitude = null;
+		judul = null;
+		latitude = this.dataset.latitude;
+		longitude = this.dataset.longitude;
+		modalTitle.innerHTML = this.dataset.judul;
+		let map = L.map("map").setView([latitude, longitude], 16);
+
+		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+			attribution:
+				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		}).addTo(map);
+
+		map.removeLayer(themarker);
+
+		console.log(longitude, latitude);
+		themarker = L.marker([latitude, longitude]).addTo(map).openPopup();
+		$(document).ready(function () {
+			$("#mapmodal").on("shown.bs.modal", function () {
+				setTimeout(function () {
+					map.invalidateSize();
+				}, 10);
+			});
 		});
-	window.addEventListener("click", function (event) {
-		if (event.target == document.querySelector(".modal")) {
-			document.querySelector(".modal").classList.remove("show");
-		}
 	});
 }
-console.log(window);
+// let mapmodal = document.querySelector(".modal-body");

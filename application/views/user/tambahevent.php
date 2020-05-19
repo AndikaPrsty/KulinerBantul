@@ -1,21 +1,19 @@
 <div class="form-kuliner-container">
-    <h3>FORM TAMBAH TEMPAT KULINER</h3>
+    <h3>FORM TAMBAH EVENT KULINER</h3>
     <div class="content-tambah-kuliner">
         <div class="form">
             <form method="post">
                 <div class="form-input">
-                    <label for="">Nama Tempat/Warung/Restoran* :</label>
-                    <input placeholder="nama warung/restoran" class="judul_post" required type="text" name="judul_post">
+                    <label for="">Nama Event Kuliner* :</label>
+                    <input placeholder="nama event" class="judul_post" required type="text" name="judul_post">
                 </div>
                 <div class="form-input">
-                    <label for="">Alamat Lengkap Tempat Kuliner* :</label>
+                    <label for="">Alamat Lengkap Tempat Event Kuliner* :</label>
                     <input class="alamat" required type="text" placeholder="alamat" name="judul_post">
                 </div>
                 <div class="form-input">
-                    <label for="">Buka Jam?* :</label>
-                    <span style="font-size:12px;color:green;font-weight:bold">contoh: 08:00 - 20:00</span>
-                    <span style="font-size:12px;color:green;font-weight:bold">-jika buka 24jam isi : buka 24 jam</span>
-                    <input class="jam_buka" placeholder="jam buka" required type="text" name="jam_buka">
+                    <label for="">Tanggal Event Kuliner?* :</label>
+                    <input class="tanggal_event" placeholder="tanggal event" required type="date" name="tanggal_event">
                 </div>
                 <div class="form-input">
                     <label for="">Deskripsi* :</label>
