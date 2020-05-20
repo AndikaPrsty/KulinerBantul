@@ -15,9 +15,9 @@ class Home extends CI_Controller
 			'tempat_kuliner' => $this->PostModel->get_post_tempat_kuliner()->result_array(),
 			'event_kuliner' => $this->PostModel->get_post_event_kuliner()->result_array()
 		];
-		$this->load->view('templates/header');
+		$this->load->view('templates/user-header');
 		$this->load->view('home/index', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates/user-footer');
 	}
 	public function daftar()
 	{
