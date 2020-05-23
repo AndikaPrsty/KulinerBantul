@@ -54,7 +54,8 @@ class Post extends CI_Controller
             'jam_buka' => $jsonpost['jam_buka'],
             'alamat' => $jsonpost['alamat'],
             'konten' => $jsonpost['konten'],
-            'tanggal' => $jsonpost['tanggal_event']
+            'tanggal' => $jsonpost['tanggal_event'],
+            'tanggal_posting' => time()
         ];
         $data_map = [
             'id_map' => 'map' . time(),

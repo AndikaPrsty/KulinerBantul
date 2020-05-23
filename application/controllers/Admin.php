@@ -43,4 +43,32 @@ class Admin extends CI_Controller
         $this->load->view('admin/preview', $data);
         // $this->load->view('templates/user-footer');
     }
+    public function daftar_member()
+    {
+        $this->load->view('templates/admin-header');
+        $this->load->view('templates/admin-sidebar');
+        $this->load->view('admin/daftar_member');
+        $this->load->view('templates/admin-footer');
+    }
+    public function daftar_tempat_kuliner()
+    {
+        $this->load->view('templates/admin-header');
+        $this->load->view('templates/admin-sidebar');
+        $this->load->view('admin/daftar_tempat_kuliner');
+        $this->load->view('templates/admin-footer');
+    }
+    public function daftar_event_kuliner()
+    {
+        $this->load->view('templates/admin-header');
+        $this->load->view('templates/admin-sidebar');
+        $this->load->view('admin/daftar_event_kuliner');
+        $this->load->view('templates/admin-footer');
+    }
+    public function daftar_lokasi_kuliner()
+    {
+        $this->load->view('templates/admin-header');
+        $this->load->view('templates/admin-sidebar');
+        $this->load->view('admin/daftar_lokasi_kuliner');
+        $this->load->view('templates/admin-footer');
+    }
 }

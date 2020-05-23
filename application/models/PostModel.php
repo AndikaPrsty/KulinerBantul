@@ -10,6 +10,7 @@ class PostModel extends CI_Model
         $this->db->join('maps', 'post.id_post = maps.id_post');
         $this->db->join('user', 'post.id_user = user.id_user');
         $this->db->where('approved', '0');
+        $this->db->order_by('tanggal_posting', 'DESC');
         return $this->db->get();
     }
     public function get_post_tempat_kuliner()
@@ -20,6 +21,7 @@ class PostModel extends CI_Model
         $this->db->join('user', 'post.id_user = user.id_user');
         $this->db->where('id_jenis_post', 'klr1587608474');
         $this->db->where('approved', '1');
+        $this->db->order_by('tanggal_posting', 'DESC');
         return $this->db->get();
     }
     public function get_post_event_kuliner()
