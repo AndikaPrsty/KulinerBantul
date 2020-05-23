@@ -34,7 +34,7 @@ uploadBtn.addEventListener("change", function (e) {
 			imgRef.getDownloadURL().then(function (url) {
 				console.log(url);
 				let xhr = new XMLHttpRequest();
-				let baseurl = `${window.origin}/KulinerBantul/home/set_img`;
+				let baseurl = `${window.origin}/KulinerBantul/user/set_img`;
 				let imgURL = {
 					image: url,
 				};

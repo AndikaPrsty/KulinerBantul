@@ -15,7 +15,7 @@
                 <h1>SIGNUP PAGE</h1>
             </div>
             <div class="form-box">
-                <form action="<?= base_url('home/daftar') ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url('user/daftar') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-input">
                         <label for="nama">Nama</label>
                         <input type="text" name="nama" id="nama">
@@ -43,7 +43,7 @@
                         <progress class="progress" value="0"></progress>
                     </div>
                     <div class="form-input">
-                        <label for="tanggal">tanggal</label>
+                        <label for="tanggal">tanggal lahir</label>
                         <input type="date" name="tanggal" id="tanggal">
                         <?= form_error('tanggal') ?>
                     </div>

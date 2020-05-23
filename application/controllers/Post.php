@@ -15,17 +15,17 @@ class Post extends CI_Controller
     {
         $id_post = 'pst' . time();
         $this->session->set_userdata(['id_post' => $id_post]);
-        $this->load->view('templates/header');
+        $this->load->view('templates/user-header');
         $this->load->view('user/tambahkuliner');
-        $this->load->view('templates/footer');
+        $this->load->view('templates/user-footer');
     }
     public function tambah_event()
     {
         $id_post = 'pst' . time();
         $this->session->set_userdata(['id_post' => $id_post]);
-        $this->load->view('templates/header');
+        $this->load->view('templates/user-header');
         $this->load->view('user/tambahevent');
-        $this->load->view('templates/footer');
+        $this->load->view('templates/user-footer');
     }
     public function set_post_img()
     {

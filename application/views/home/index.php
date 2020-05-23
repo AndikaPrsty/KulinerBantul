@@ -53,7 +53,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <P style="font-size: 13px"><?= $tempat['alamat'] ?></P>
                         <div class="map">
-                            <button style="margin-right:5px" data-judul="<?= $tempat['judul_post'] ?>" data-longitude="<?= $tempat['longitude'] ?>" data-latitude="<?= $tempat['latitude'] ?>" data-toggle="modal" data-target="#mapmodal" id="btnmap" class="btn btn-sm btn-primary "><i class="fas fa-globe btnmap"></i></button>
+                            <button style="margin-right:5px;" data-judul="<?= $tempat['judul_post'] ?>" data-longitude="<?= $tempat['longitude'] ?>" data-latitude="<?= $tempat['latitude'] ?>" data-toggle="modal" data-target="#mapmodal" id="btnmap" class="btn btn-sm btn-primary "><i class="fas fa-globe btnmap ml-2"></i></button>
                         </div>
                     </div>
                     <div class="jam-buka">
