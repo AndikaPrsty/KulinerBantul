@@ -11,8 +11,9 @@
 <body>
     <div class="container">
         <div class="login-box">
-            <div class="logo">
+            <div style="flex-direction: column;align-items:center" class="logo">
                 <h1>Login Page</h1>
+                <?= $this->session->flashdata('message') ?>
             </div>
             <div class="form-box">
                 <form action="<?= base_url('/user/index') ?>" method="post">

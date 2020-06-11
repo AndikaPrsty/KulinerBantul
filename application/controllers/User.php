@@ -56,6 +56,11 @@ class User extends CI_Controller
             $telp = $this->input->post('telp');
             $password2 = $this->input->post('password2');
 
+            if ($this->session->userdata('image')) {
+                $gambar = $this->session->userdata('image');
+            } else {
+                $gambar = 'default.jpg';
+            }
 
             $data = [
                 'id_user' => 'usr' . time(),
@@ -66,7 +71,7 @@ class User extends CI_Controller
                 'tanggal_lahir' => strtotime($tanggal),
                 'telp' => $telp,
                 'username' => strtolower(explode(' ', $nama)[0]) . time(),
-                'image' => $this->session->userdata('image'),
+                'image' => $gambar,
                 'tanggal_daftar' => time(),
                 'ip_address' => 0
             ];
@@ -100,10 +105,12 @@ class User extends CI_Controller
                 $this->session->set_userdata($session);
                 redirect();
             } else {
-                echo 'password salah';
+                $this->session->set_flashdata('message', '<h4 style="color:red">password salah</h4>');
+                redirect('user');
             }
         } else {
-            echo 'user tidak ditemukan';
+            $this->session->set_flashdata('message', '<h4 style="color:red">user tidak ditemukan</h4>');
+            redirect('user');
         }
     }
     public function logout()
