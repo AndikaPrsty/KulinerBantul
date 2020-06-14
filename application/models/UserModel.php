@@ -11,6 +11,10 @@ class UserModel extends CI_Model
     {
         return $this->db->get_where('user', $data);
     }
+    public function getUsers()
+    {
+        return $this->db->get_where('user', ['id_role' => 'mbr1587565962']);
+    }
     public function get_jumlah_member()
     {
         return $this->db->get_where('user', ['id_role' => 'mbr1587565962'])->num_rows();

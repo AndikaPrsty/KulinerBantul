@@ -64,7 +64,7 @@ class User extends CI_Controller
 
             $data = [
                 'id_user' => 'usr' . time(),
-                'id_role' => 'adm1587565941',
+                'id_role' => 'mbr1587565962',
                 'nama_user' => $nama,
                 'email' => $email,
                 'password' => password_hash($password, PASSWORD_DEFAULT),
@@ -103,7 +103,11 @@ class User extends CI_Controller
                     'ip_address' => $user['ip_address']
                 ];
                 $this->session->set_userdata($session);
-                redirect();
+                if ($this->session->userdata('id_role') == 'mbr1587565962') {
+                    redirect();
+                } else {
+                    redirect('admin');
+                }
             } else {
                 $this->session->set_flashdata('message', '<h4 style="color:red">password salah</h4>');
                 redirect('user');

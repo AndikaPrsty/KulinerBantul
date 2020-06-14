@@ -20,7 +20,27 @@
 
     <!-- Main content -->
     <div class="content">
-
+        <div class="row">
+            <div class="col">
+                <table class="table table-striped">
+                    <tr>
+                        <th>No</th>
+                        <th>Judul Post</th>
+                        <th>Tanggal Posting</th>
+                        <th>Action</th>
+                    </tr>
+                    <?php foreach ($tempat_kuliner as $kuliner) : ?>
+                        <?php $no = 1 ?>
+                        <tr>
+                            <td><?= $no ?></td>
+                            <td><?= $kuliner['judul_post'] ?></td>
+                            <td><?= date('Y-m-d', $kuliner['tanggal_posting']) ?></td>
+                            <td><button onclick="window.location.href = '<?= base_url('admin/preview_post/') . $kuliner['id_post'] . '/' . $kuliner['id_jenis_post'] ?>'" class="btn-info mr-1">Lihat Post</button></td>
+                        </tr>
+                    <?php endforeach ?>
+                </table>
+            </div>
+        </div>
         <!-- /.container-fluid -->
     </div>
     <!-- /.content -->

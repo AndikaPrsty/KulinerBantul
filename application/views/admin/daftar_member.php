@@ -20,6 +20,27 @@
 
     <!-- Main content -->
     <div class="content">
+        <div class="row">
+            <div class="col lg-6">
+                <table class="table table-striped">
+                
+                    <tr>
+                        <th>No</th>
+                        <th>Email</th>
+                        <th>Telp</th>
+                    </tr>
+                    <?php foreach ($users as $user) : ?>
+                        <?php $no = 1; ?>
+                        <tr>
+                            <td><?= $no ?></td>
+                            <td><?= $user['email'] ?></td>
+                            <td><?= $user['telp'] ?></td>
+                            <?php $no++; ?>
+                        </tr>
+                    <?php endforeach ?>
+                </table>
+            </div>
+        </div>
 
         <!-- /.container-fluid -->
     </div>

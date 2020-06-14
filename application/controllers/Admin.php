@@ -2,6 +2,15 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class Admin extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        // var_dump($this->session->userdata('id_role' == 'mbr1587565962'));
+        // die;
+        if ($this->session->userdata('id_role') ==  'mbr1587565962') {
+            redirect();
+        }
+    }
     public function index()
     {
         $jumlah_member = $this->UserModel->get_jumlah_member();
@@ -45,16 +54,24 @@ class Admin extends CI_Controller
     }
     public function daftar_member()
     {
+
+        $data['users'] = $this->UserModel->getUsers()->result_array();
+
+        // var_dump($users);
+        // die;
+
         $this->load->view('templates/admin-header');
         $this->load->view('templates/admin-sidebar');
-        $this->load->view('admin/daftar_member');
+        $this->load->view('admin/daftar_member', $data);
         $this->load->view('templates/admin-footer');
     }
     public function daftar_tempat_kuliner()
     {
+        $data['tempat_kuliner'] = $this->PostModel->get_post_tempat_kuliner()->result_array();
+
         $this->load->view('templates/admin-header');
         $this->load->view('templates/admin-sidebar');
-        $this->load->view('admin/daftar_tempat_kuliner');
+        $this->load->view('admin/daftar_tempat_kuliner', $data);
         $this->load->view('templates/admin-footer');
     }
     public function daftar_event_kuliner()

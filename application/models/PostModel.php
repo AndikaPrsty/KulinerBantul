@@ -15,7 +15,7 @@ class PostModel extends CI_Model
     }
     public function get_post_tempat_kuliner()
     {
-        $this->db->select('nama_user,jam_buka,username,username,image,post.id_post,post.id_user,id_jenis_post,judul_post,alamat,konten,id_map,latitude,longitude');
+        $this->db->select('nama_user,jam_buka,username,username,image,post.id_post,post.id_user,id_jenis_post,judul_post,tanggal_posting,alamat,konten,id_map,latitude,longitude');
         $this->db->from('post');
         $this->db->join('maps', 'post.id_post = maps.id_post');
         $this->db->join('user', 'post.id_user = user.id_user');
@@ -100,7 +100,7 @@ class PostModel extends CI_Model
             $this->db->join('user', 'post.id_user = user.id_user');
             $this->db->where('id_jenis_post', 'klr1587608474');
             $this->db->where('post.id_post', $id_post);
-            $this->db->where('approved', '0');
+            // $this->db->where('approved', '0');
             return $this->db->get();
         } else {
             $this->db->select('nama_user,tanggal,username,username,image,post.id_post,post.id_user,id_jenis_post,judul_post,alamat,konten,id_map,latitude,longitude');
@@ -109,7 +109,7 @@ class PostModel extends CI_Model
             $this->db->join('user', 'post.id_user = user.id_user');
             $this->db->where('id_jenis_post', 'evt1587608520');
             $this->db->where('post.id_post', $id_post);
-            $this->db->where('approved', '0');
+            // $this->db->where('approved', '0');
             return $this->db->get();
         }
     }
