@@ -99,7 +99,7 @@ class User extends CI_Controller
     {
         $id_post = $this->uri->segment(3);
         $data = [
-            'tempat_kuliner' => $this->PostModel->get_user_post_tempat_kuliner()->result_array()[0]
+            'tempat_kuliner' => $this->PostModel->get_edit_user_post_tempat_kuliner($id_post)->result_array()[0]
         ];
         $this->load->view('templates/user-header');
         $this->load->view('user/edit_tempat_kuliner',$data);
@@ -114,7 +114,7 @@ class User extends CI_Controller
         if ($this->form_validation->run() == false) {
             $id_post = $this->uri->segment(3);
             $data = [
-                'tempat_kuliner' => $this->PostModel->get_user_post_tempat_kuliner()->result_array()[0]
+                'tempat_kuliner' => $this->PostModel->get_edit_user_post_tempat_kuliner($id_post)->result_array()[0]
             ];
             $this->load->view('templates/user-header');
             $this->load->view('user/edit_tempat_kuliner',$data);
@@ -131,12 +131,53 @@ class User extends CI_Controller
                 'longitude' => $this->input->post('longitude'),
             ];
             $id_post = $this->uri->segment(3);
-            $this->PostModel->update_post_tempat_kuliner($data,$id_post);
+            $this->PostModel->update_post_kuliner($data,$id_post);
             $this->PostModel->update_post_map($map,$id_post);
             redirect('/user/user_posts');
         }
     }
-    public function deletekuliner()
+    public function editevent()
+    {
+        $id_post = $this->uri->segment(3);
+        $data = [
+            'event_kuliner' => $this->PostModel->get_edit_user_post_event_kuliner($id_post)->result_array()[0]
+        ];
+        $this->load->view('templates/user-header');
+        $this->load->view('user/edit_event_kuliner',$data);
+        $this->load->view('templates/user-footer');
+    }
+    public function updateevent()
+    {
+        $this->form_validation->set_rules('judul_post','Nama Tempat','required',['required' => 'Nama Tempat Tidak Boleh Dikosongkan']);
+        $this->form_validation->set_rules('alamat','Alamat','required',['required' => 'Alamat Tidak Boleh Dikosongkan']);
+        $this->form_validation->set_rules('tanggal_event','tanggal event','required',['required' => 'Tanggal Event Tidak Boleh Dikosongkan']);
+        $this->form_validation->set_rules('deskripsi','Deskripsi','required',['required' => 'Deskipsi Tidak Boleh Dikosongkan']);
+        if ($this->form_validation->run() == false) {
+            $id_post = $this->uri->segment(3);
+            $data = [
+                'tempat_kuliner' => $this->PostModel->get_edit_user_post_tempat_kuliner($id_post)->result_array()[0]
+            ];
+            $this->load->view('templates/user-header');
+            $this->load->view('user/edit_event_kuliner',$data);
+            $this->load->view('templates/user-footer');
+        } else {
+            $data = [
+                'judul_post' => $this->input->post('judul_post'),
+                'alamat' => $this->input->post('alamat'),
+                'konten' => $this->input->post('deskripsi'),
+                'tanggal' => $this->input->post('tanggal_event'),
+            ];
+            $map = [
+                'latitude' => $this->input->post('latitude'),
+                'longitude' => $this->input->post('longitude'),
+            ];
+            $id_post = $this->uri->segment(3);
+            $this->PostModel->update_post_kuliner($data,$id_post);
+            $this->PostModel->update_post_map($map,$id_post);
+            redirect('/user/user_posts');
+        }
+    }
+    public function deletepost()
     {
         $id_post = $this->uri->segment(3);
         $this->PostModel->delete_post($id_post);

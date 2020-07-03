@@ -64,7 +64,8 @@
 			<div class="event-content-header">
 				<img src="<?= $event['image'] ?>" alt="">
 				<p><?= $event['judul_post'] ?></p>
-				<i class="fas fa-ellipsis-v"></i>
+				<i class="fas fa-ellipsis-v" data-id="<?= $event['id_post'] ?>" id="modalEventOptionsButton"
+					data-toggle="modal" data-target="#modalEventOptions"></i>
 			</div>
 			<div class="event-content-img">
 				<div id="carouselExampleControls<?= $event['id_post'] ?>" data-interval="false" class="carousel slide">
@@ -135,8 +136,25 @@
 </div>
 
 <!--Post Tempat Kulinwe Modal Options -->
-
 <div class="modal fade" id="modalTempatOptions" tabindex="-1" role="dialog" aria-labelledby="modalTempatOptionsLabel"
+	aria-hidden="true">
+	<div class="modal-dialog modal-sm modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="h4">Action</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Post event Kulinwe Modal Options -->
+<div class="modal fade" id="modalEventOptions" tabindex="-1" role="dialog" aria-labelledby="modalEventOptionsLabel"
 	aria-hidden="true">
 	<div class="modal-dialog modal-sm modal-dialog-centered">
 		<div class="modal-content">

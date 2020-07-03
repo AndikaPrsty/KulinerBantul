@@ -25,6 +25,9 @@
 <?php if ($this->uri->segment(2) == 'editkuliner') : ?>
     <script src="<?= base_url('/assets/js/editkuliner.js') ?>"></script>
 <?php endif ?>
+<?php if ($this->uri->segment(2) == 'editevent') : ?>
+    <script src="<?= base_url('/assets/js/editevent.js') ?>"></script>
+<?php endif ?>
 </body>
 
 </html>
