@@ -16,7 +16,7 @@
                 <?= $this->session->flashdata('message') ?>
             </div>
             <div class="form-box">
-                <form action="<?= base_url('/user/index') ?>" method="post">
+                <form action="<?= base_url('/user/login') ?>" method="post">
                     <div class="form-input">
                         <label for="email">email</label>
                         <input type="email" name="email" id="email">

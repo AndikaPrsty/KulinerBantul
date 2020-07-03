@@ -21,6 +21,10 @@
 <?php endif ?>
 <script>
 </script>
+<script src="<?= base_url('/assets/js/profile.js') ?>"></script>
+<?php if ($this->uri->segment(2) == 'editkuliner') : ?>
+    <script src="<?= base_url('/assets/js/editkuliner.js') ?>"></script>
+<?php endif ?>
 </body>
 
 </html>

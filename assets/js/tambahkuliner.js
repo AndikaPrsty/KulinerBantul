@@ -3,8 +3,7 @@ document.querySelector(".map-container").innerHTML =
 
 var map = L.map("map").setView([-7.88776161446896, 110.32743226340244], 17);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-	attribution:
-		'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
 let lat = document.querySelector(".latitude");

@@ -19,4 +19,16 @@ class UserModel extends CI_Model
     {
         return $this->db->get_where('user', ['id_role' => 'mbr1587565962'])->num_rows();
     }
+    public function updateUser($data)
+    {
+        $this->db->set($data);
+        $this->db->where('email',$this->session->userdata('email'));
+        $this->db->update('user');
+    }
+    public function updatePassword($data)
+    {
+        $this->db->set($data);
+        $this->db->where('email',$this->session->userdata("email"));
+        $this->db->update('user');
+    }
 }

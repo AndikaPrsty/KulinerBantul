@@ -32,6 +32,43 @@ class PostModel extends CI_Model
         $this->db->join('user', 'post.id_user = user.id_user');
         $this->db->where('id_jenis_post', 'evt1587608520');
         $this->db->where('approved', '1');
+        $this->db->order_by('tanggal_posting', 'DESC');
+        return $this->db->get();
+    }
+    public function get_user_post_tempat_kuliner()
+    {
+        $this->db->select('nama_user,jam_buka,username,username,image,post.id_post,post.id_user,id_jenis_post,judul_post,tanggal_posting,alamat,konten,id_map,latitude,longitude');
+        $this->db->from('post');
+        $this->db->join('maps', 'post.id_post = maps.id_post');
+        $this->db->join('user', 'post.id_user = user.id_user');
+        $this->db->where('id_jenis_post', 'klr1587608474');
+        $this->db->where('approved', '1');
+        $this->db->where('post.id_user',$this->session->userdata('id_user'));
+        $this->db->order_by('tanggal_posting', 'DESC');
+        return $this->db->get();
+    }
+    public function update_post_tempat_kuliner($data,$id_post)
+    {
+        $this->db->set($data);
+        $this->db->update('post');
+        $this->db->where('id_post',$id_post);
+    }
+    public function update_post_map($data,$id_post)
+    {
+        $this->db->set($data);
+        $this->db->update('maps');
+        $this->db->where('id_post',$id_post);
+    }
+    public function get_user_post_event_kuliner()
+    {
+        $this->db->select('nama_user,tanggal,tanggal_posting,username,username,image,post.id_post,post.id_user,id_jenis_post,judul_post,alamat,konten,id_map,latitude,longitude');
+        $this->db->from('post');
+        $this->db->join('maps', 'post.id_post = maps.id_post');
+        $this->db->join('user', 'post.id_user = user.id_user');
+        $this->db->where('id_jenis_post', 'evt1587608520');
+        $this->db->where('approved', '1');
+        $this->db->where('post.id_user',$this->session->userdata('id_user'));
+        $this->db->order_by('tanggal_posting', 'DESC');
         return $this->db->get();
     }
     public function get_gambar_post($data)
@@ -98,6 +135,11 @@ class PostModel extends CI_Model
     {
         $this->db->where('id_post', $id_post);
         $this->db->delete('gambar');
+    }
+    public function delete_map($id_post)
+    {
+        $this->db->where('id_post', $id_post);
+        $this->db->delete('maps');
     }
     public function get_preview_post($id_post, $id_jenis_post)
     {

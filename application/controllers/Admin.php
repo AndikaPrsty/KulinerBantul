@@ -40,6 +40,7 @@ class Admin extends CI_Controller
     {
         $this->PostModel->delete_post($id_post);
         $this->PostModel->delete_gambar($id_post);
+        $this->PostModel->delete_map($id_post);
         redirect('admin');
     }
     public function preview_post($id_post, $id_jenis_post)
