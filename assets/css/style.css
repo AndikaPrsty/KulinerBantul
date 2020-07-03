@@ -449,6 +449,12 @@ nav .nav-menu img {
 	margin-right: 10px;
 	margin-top: -15px;
 }
+.content .event .event-container .event-content-info .alamat .map {
+	display: flex;
+	position: absolute;
+	right: 0;
+	margin-top: -5px;
+}
 .content .event .event-container .event-content-info .tanggal {
 	margin-left: 10px;
 	display: flex;

@@ -20,7 +20,13 @@
 
     <!-- Main content -->
     <div class="content">
-
+        <div class="row">
+            <div class="col">
+                <div class="map-container">
+                
+                </div>  
+            </div>
+        </div>
         <!-- /.container-fluid -->
     </div>
     <!-- /.content -->

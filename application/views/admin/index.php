@@ -103,7 +103,7 @@
                                 <td width="150px" class="text-break"><?= $post['alamat'] ?></td>
                                 <td width="250px"><textarea cols="40" rows="5" readonly><?= $post['konten'] ?></textarea></td>
                                 <td width="100px" class="text-break"><span class="badge"><?= $post['jenis_post'] ?></span></td>
-                                <td width="200px"><button onclick="window.location.href = '<?= base_url('admin/preview_post/') . $post['id_post'] . '/' . $post['id_jenis_post'] ?>'" class="btn-info mr-1">Preview</button><a href="<?= base_url('admin/approve_post/') . $post['id_post'] ?>" onclick="confirm('apakah anda yakin menyetujui post ini?')"><button class=" btn-success mr-1">setujui</button></a><button onclick="confirm('apakah anda yakin akan menghapus post ini?'); window.location.href = '<?= base_url('admin/reject_post/') . $post['id_post'] ?>'" class="btn-danger">tolak</button></td>
+                                <td width="200px"><button onclick="window.location.href = '<?= base_url('admin/preview_post/') . $post['id_post'] . '/' . $post['id_jenis_post'] ?>'" class="btn-info mr-1">Preview</button><a href="<?= base_url('admin/approve_post/') . $post['id_post'] ?>" onclick="return confirm('apakah anda yakin menyetujui post ini?')"><button class=" btn-success mr-1">setujui</button></a><button onclick="return confirm('apakah anda yakin akan menghapus post ini?'); window.location.href = '<?= base_url('admin/reject_post/') . $post['id_post'] ?>'" class="btn-danger">tolak</button></td>
                             </tr>
 
                         <?php endforeach ?>

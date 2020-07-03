@@ -76,9 +76,11 @@ class Admin extends CI_Controller
     }
     public function daftar_event_kuliner()
     {
+        $data['event_kuliner'] = $this->PostModel->get_post_event_kuliner()->result_array();
+
         $this->load->view('templates/admin-header');
         $this->load->view('templates/admin-sidebar');
-        $this->load->view('admin/daftar_event_kuliner');
+        $this->load->view('admin/daftar_event_kuliner',$data);
         $this->load->view('templates/admin-footer');
     }
     public function daftar_lokasi_kuliner()
@@ -87,5 +89,10 @@ class Admin extends CI_Controller
         $this->load->view('templates/admin-sidebar');
         $this->load->view('admin/daftar_lokasi_kuliner');
         $this->load->view('templates/admin-footer');
+    }
+    public function get_markers()
+    {
+        $markers = $this->PostModel->get_markers()->result_array();
+        echo json_encode($markers);
     }
 }

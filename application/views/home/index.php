@@ -105,6 +105,9 @@
                     <div class="alamat">
                         <i class="fas fa-map-marker-alt"></i>
                         <p><?= $event['alamat'] ?></p>
+                        <div class="map">
+                        <button style="margin-right:5px;" data-judul="<?= $event['judul_post'] ?>" data-longitude="<?= $event['longitude'] ?>" data-latitude="<?= $event['latitude'] ?>" data-toggle="modal" data-target="#mapmodal" id="btnmap" class="btn btn-sm btn-primary "><i class="fas fa-globe btnmap ml-2"></i></button>
+                        </div>
                     </div>
                     <hr>
                     <div class="tanggal">
