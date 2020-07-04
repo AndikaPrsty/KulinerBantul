@@ -55,6 +55,7 @@ class User extends CI_Controller
     public function ubah_password()
     {
         $passwordlama = $this->input->post('passwordlama');
+        
         $hash = $this->UserModel->getUser(['email' => $this->session->userdata('email')])->result_array()[0];
         if(password_verify($passwordlama,$hash['password']))
         {
@@ -287,11 +288,11 @@ class User extends CI_Controller
                 }
             } else {
                 $this->session->set_flashdata('message', '<h4 style="color:red">password salah</h4>');
-                redirect('user');
+                redirect('user/login');
             }
         } else {
             $this->session->set_flashdata('message', '<h4 style="color:red">user tidak ditemukan</h4>');
-            redirect('user');
+            redirect('user/login');
         }
     }
     public function logout()

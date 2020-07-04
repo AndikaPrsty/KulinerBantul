@@ -18,7 +18,7 @@
 			rgba(126, 161, 31, 0.616),
 			rgb(126, 161, 31));
             display:flex;
-            position:absolute;
+            position:fixed;
             flex-direction:column;
             margin-top:-19px;
             height:100vh;
